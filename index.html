@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        width: 100%;
+        height: 100vh;
+        background-color: #cfd8dc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main > div {
+        width: 500px;
+        height: 300px;
+        border-radius: 10px;
+        background: url(./img/download.png) #2b5792;
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+      }
+      main > div > div {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+      }
+      main > div > div:nth-of-type(1) {
+        top: 45%;
+      }
+      main > div > div:nth-of-type(2) {
+        top: 65%;
+      }
+      input {
+        border-radius: 3px;
+        background-color: #72849c7a;
+        color: white;
+        outline: none;
+        border: none;
+        display: flex;
+        text-align: center;
+        font-size: 20px;
+      }
+      main > div > div:nth-of-type(1) > input {
+        width: 80px;
+        height: 40px;
+        margin: 10px;
+      }
+
+      main > div > div:nth-of-type(2) > input {
+        width: 50px;
+        height: 30px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="card">
+        <div>
+          <input type="text" id="input1" />
+          <input type="text" id="input2" />
+          <input type="text" id="input3" />
+          <input type="text" id="input4" />
+        </div>
+        <div>
+          <input type="text" id="input5" />
+          /
+          <input type="text" id="input6" />
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    let _input1 = document.getElementById("input1");
+    let _input2 = document.getElementById("input2");
+    let _input3 = document.getElementById("input3");
+    let _input4 = document.getElementById("input4");
+    let _input5 = document.getElementById("input5");
+    let _input6 = document.getElementById("input6");
+
+    _input1.addEventListener("input", check1);
+    function check1() {
+      if (_input1.value.length >= 4) {
+        _input1.value = _input1.value.substring(0, 4);
+        _input2.focus();
+      }
+    }
+    _input2.addEventListener("input", check2);
+    function check2() {
+      if (_input2.value.length >= 4) {
+        _input2.value = _input2.value.substring(0, 4);
+        _input3.focus();
+      }
+    }
+
+    _input3.addEventListener("input", check3);
+    function check3() {
+      if (_input3.value.length >= 4) {
+        _input3.value = _input3.value.substring(0, 4);
+        _input4.focus();
+      }
+    }
+    _input4.addEventListener("input", check4);
+    function check4() {
+      if (_input4.value.length >= 4) {
+        _input4.value = _input4.value.substring(0, 4);
+        _input5.focus();
+      }
+    }
+    _input5.addEventListener("input", check5);
+    function check5() {
+      if (_input5.value.length >= 2) {
+        _input5.value = _input5.value.substring(0, 2);
+        _input6.focus();
+      }
+    }
+    _input6.addEventListener("input", check6);
+    function check6() {
+      if (_input6.value.length >= 2) {
+        _input6.value = _input6.value.substring(0, 2);
+        _input6.focus();
+      }
+    }
+    function reset() {
+      _input1.value = "";
+      _input2.value = "";
+      _input3.value = "";
+      _input4.value = "";
+      _input5.value = "";
+      _input6.value = "";
+    }
+    reset()
+  </script>
+</html>
